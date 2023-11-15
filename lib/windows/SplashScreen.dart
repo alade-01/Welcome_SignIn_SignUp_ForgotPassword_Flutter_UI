@@ -78,7 +78,7 @@ class _SplashScreenState extends State<SplashScreen>
               child: CircularProgressIndicator(),
             ),
           ),
-          Positioned(
+          const Positioned(
             bottom: 20,
             right: 0,
             left: 0,
@@ -86,7 +86,7 @@ class _SplashScreenState extends State<SplashScreen>
               children: [
                 Text(
                     //translate.text("app_copyright"),
-                    "Onboarding"),
+                    "Welcome to App"),
               ],
             ),
           )

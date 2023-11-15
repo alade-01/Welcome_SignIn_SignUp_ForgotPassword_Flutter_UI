@@ -7,16 +7,15 @@ class Background extends StatelessWidget {
     Key? key,
     required this.child,
     this.topImage = "res/images/main_top.svg",
-    this.bottomImage = "assets/images/login_bottom.png",
   }) : super(key: key);
 
-  final String topImage, bottomImage;
+  final String topImage;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         height: MediaQuery.of(context).size.height,
         child: Stack(

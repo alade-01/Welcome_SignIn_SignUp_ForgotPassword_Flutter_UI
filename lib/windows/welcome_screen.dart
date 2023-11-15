@@ -37,7 +37,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               flex: 9,
               child: OnboardingItem(
                 title: "Discover Your \n Dream Job Here",
-                image: "res/images/onboarding_image/onboardingImage_1.svg",
+                image: "res/images/imageHoneApp.svg",
                 text: "Explore all the existing job roles based on your \n interest and study major",
               ),
             ),
