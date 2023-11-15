@@ -1,0 +1,85 @@
+{
+  "id": "root",
+  "title": "JOUETS",
+  "items": [
+    {
+      "title": "Tous",
+      "id": "toutes_les_catégories",
+      "image": "toy_category-min.png",
+      "items": []
+    },
+    {
+      "title": "Lot de jouets",
+      "id": "lot_de_jouets",
+      "image": "toy_lot-min.png",
+      "items": [
+        {
+          "title": "Tous les jouets",
+          "id": "Tous les jouets",
+          "items": []
+        },
+        {
+          "title": "Catégories",
+          "id": "Tous les jouets",
+          "items": []
+        },
+        {
+          "title": "Âges",
+          "id": "Âges",
+          "items": []
+        },
+        {
+          "title": "Marques",
+          "id": "Marques",
+          "items": []
+        },
+        {
+          "title": "Figurines",
+          "id": "Figurines",
+          "items": []
+        },
+        {
+          "title": "Dons",
+          "id": "Dons",
+          "items": []
+        }
+      ]
+    },
+    {
+      "title": "Catégories",
+      "id": "categories",
+      "image": "toy_category-min.png",
+      "items": [
+      ]
+    },
+    {
+      "title": "Héros",
+      "id": "heroes",
+      "image": "toy_duos-min.png",
+      "items": []
+    },
+    {
+      "title": "Livres",
+      "id": "books",
+      "image": "toy_book-min.png",
+      "items": []
+    },
+    {
+      "title": "Âges",
+      "id": "ages",
+      "image": "toy_lot-min.png"
+    },
+    {
+      "title": "Marques",
+      "id": "brands",
+      "image": "toy_baby-min.png",
+      "items": []
+    },
+    {
+      "title": "Dons",
+      "id": "dons",
+      "image": "toy_potatoes-min.png",
+      "items": []
+    }
+  ]
+}
