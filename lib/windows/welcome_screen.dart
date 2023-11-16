@@ -54,7 +54,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         Expanded(
                           child: AppButton(
                               callback: () => Navigator.pushNamed(
-                                  context, RouterGenerator.registerRoute),
+                                  context, RouterGenerator.loginRoute),
                               label: "Login",
                               buttonType: ButtonType.PRIMARY,
                               //width: size.width,

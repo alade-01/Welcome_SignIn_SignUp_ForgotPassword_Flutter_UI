@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onboarding_login_register_app_ui/windows/LoginScreen.dart';
 
 import '../windows/SplashScreen.dart';
 import '../windows/welcome_screen.dart';
@@ -30,11 +31,11 @@ class RouterGenerator {
         return MaterialPageRoute(
           builder: (_) => const WelcomeScreen(),
         );
-      /*
-      case RouterGenerator.commentUserPostScreenRoute:
+
+      case RouterGenerator.loginRoute:
         return MaterialPageRoute(
-          builder: (_) => const CommentUserPostScreen(),
-        );*/
+          builder: (_) => const LoginScreen(),
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => const SplashScreen(),

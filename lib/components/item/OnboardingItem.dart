@@ -29,7 +29,7 @@ class OnboardingItem extends StatelessWidget {
           child: Text(
             title!,
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                color: primaryColor, fontSize: 35, fontWeight: FontWeight.w700),
+                color: primaryColor, fontSize: 35, fontWeight: FontWeight.w600),
             textAlign: TextAlign.center,
           ),
         ),
@@ -40,7 +40,7 @@ class OnboardingItem extends StatelessWidget {
             style: Theme.of(context).textTheme.labelMedium!.copyWith(
                 color: Colors.black,
                 fontSize: 14,
-                fontWeight: FontWeight.normal),
+                fontWeight: FontWeight.w400),
             textAlign: TextAlign.center,
           ),
         )

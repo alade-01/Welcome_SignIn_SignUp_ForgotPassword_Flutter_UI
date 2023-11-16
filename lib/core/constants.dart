@@ -11,7 +11,7 @@ const String BASE_HOST = kReleaseMode || kProfileMode
     ? BASE_URL_PROD
     : BASE_URL_DEV; // BASE_URL_DEV;
 
-const String BASE_URL = '${SCHEME}://${BASE_HOST}';
+const String BASE_URL = '$SCHEME://$BASE_HOST';
 const String storageKey = "kicktoysApplication_";
 const String storageTokenSuffix = "jwtToken";
 const String storageCountrySuffix = "countryCode";
@@ -61,9 +61,9 @@ const PRIMARY_FONT = "Poppins";
 // const PRIMARY_FONT = "ChakraPetch";
 const SECONDARY_FONT = "Lato";
 
-const USED_FONT = SECONDARY_FONT;
+const USED_FONT = PRIMARY_FONT;
 
-TextStyle textStyleInput = TextStyle(color: Colors.black, fontSize: 17);
+TextStyle textStyleInput = const TextStyle(color: Colors.black, fontSize: 17);
 
 //0xFFEA097F #EA097F
 Map<int, Color> color3 = {

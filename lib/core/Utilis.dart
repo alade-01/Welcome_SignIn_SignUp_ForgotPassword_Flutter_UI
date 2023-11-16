@@ -60,38 +60,38 @@ extension HexColor on Color {
 extension ExtensionParsing on File {
   bool isImage() {
     return imagesExtensions.any((element) =>
-        (this.path.toLowerCase().contains(element) &&
-            this.path.toLowerCase().lastIndexOf(element) > -1 &&
-            this.path.toLowerCase().lastIndexOf(element) + element.length ==
-                this.path.toLowerCase().length));
+        (path.toLowerCase().contains(element) &&
+            path.toLowerCase().lastIndexOf(element) > -1 &&
+            path.toLowerCase().lastIndexOf(element) + element.length ==
+                path.toLowerCase().length));
   }
 
   bool isDocument() {
     return documentsExtensions.any((element) =>
-        (this.path.toLowerCase().contains(element) &&
-            this.path.toLowerCase().lastIndexOf(element) > -1 &&
-            this.path.toLowerCase().lastIndexOf(element) + element.length ==
-                this.path.toLowerCase().length));
+        (path.toLowerCase().contains(element) &&
+            path.toLowerCase().lastIndexOf(element) > -1 &&
+            path.toLowerCase().lastIndexOf(element) + element.length ==
+                path.toLowerCase().length));
   }
 
   bool isMovie() {
     return videosExtensions.any((element) =>
-        (this.path.toLowerCase().contains(element) &&
-            this.path.toLowerCase().lastIndexOf(element) > -1 &&
-            this.path.toLowerCase().lastIndexOf(element) + element.length ==
-                this.path.toLowerCase().length));
+        (path.toLowerCase().contains(element) &&
+            path.toLowerCase().lastIndexOf(element) > -1 &&
+            path.toLowerCase().lastIndexOf(element) + element.length ==
+                path.toLowerCase().length));
   }
 }
 
 extension TextCustomFormater on String {
   bool isItalic() {
-    print("indexOf ${this.indexOf("__")}");
-    print("lastIndexOf ${this.lastIndexOf("__")}");
-    print("length ${this.length}");
-    return this.isNotEmpty &&
-        this.contains("__") &&
-        this.indexOf("__") == 0 &&
-        this.lastIndexOf("__") == (this.length - 2);
+    print("indexOf ${indexOf("__")}");
+    print("lastIndexOf ${lastIndexOf("__")}");
+    print("length $length");
+    return isNotEmpty &&
+        contains("__") &&
+        indexOf("__") == 0 &&
+        lastIndexOf("__") == (length - 2);
   }
 
   List<String> splitWithDelim(RegExp pattern) =>
@@ -102,7 +102,7 @@ extension TextCustomFormater on String {
   }
 
   String clear() {
-    print("indexOf ${this.indexOf("__")}");
+    print("indexOf ${indexOf("__")}");
     String text = this;
     //while (text.indexOf("__") >= 0) {
     //text = text.substring(this.indexOf("__"), this.indexOf("__") + 2);
@@ -115,7 +115,7 @@ extension CurrencyFormater on String {
   /// String is in the format "aabbcc" or "ffaabbcc" with an optional leading "#".
 // locale eu or fr_FR
   String formatCurrency({String locale = "eu", int decimalDigits = 2}) {
-    if (this.isEmpty || this.toLowerCase() == "null") return "";
+    if (isEmpty || toLowerCase() == "null") return "";
 
     return NumberFormat.currency(
             locale: locale, decimalDigits: decimalDigits, symbol: "€")
@@ -123,7 +123,7 @@ extension CurrencyFormater on String {
   }
 
   String formatDateyMMMd() {
-    if (this.isEmpty) return "";
+    if (isEmpty) return "";
     DateFormat f = DateFormat.yMMMd("FR-fr");
     return f.format(DateTime.parse(this));
   }
@@ -154,13 +154,13 @@ extension RegExpExtension on RegExp {
 }
 
 String ageRangeOf(List<String>? agesList) {
-  const PREFIX_YEAR = "ANS";
-  const PREFIX_MONTH = "MOIS";
+  const prefixYear = "ANS";
+  const prefixMonth = "MOIS";
 
   List<String> ageRangeMonth =
-      (agesList ?? []).where((age) => age.contains(PREFIX_MONTH)).toList();
+      (agesList ?? []).where((age) => age.contains(prefixMonth)).toList();
   List<String> ageRangeYeah =
-      (agesList ?? []).where((age) => age.contains(PREFIX_YEAR)).toList();
+      (agesList ?? []).where((age) => age.contains(prefixYear)).toList();
 
   ageRangeMonth.sort();
   ageRangeYeah.sort();
@@ -168,7 +168,7 @@ String ageRangeOf(List<String>? agesList) {
   List<String> resultSortAges = ageRangeMonth;
   resultSortAges.addAll(ageRangeYeah);
 
-  if (resultSortAges.length == 0) {
+  if (resultSortAges.isEmpty) {
     return "Tous les âges";
   }
 
@@ -181,14 +181,14 @@ String ageRangeOf(List<String>? agesList) {
   String lastPartAge = resultSortAges.last.split('_')[2];
   String finalAge = "";
 
-  if (resultSortAges.first.contains(PREFIX_MONTH) &&
-      resultSortAges.last.contains(PREFIX_MONTH)) {
-    finalAge = "$firstPartAge - $lastPartAge $PREFIX_MONTH";
-  } else if (resultSortAges.first.contains(PREFIX_YEAR) &&
-      resultSortAges.last.contains(PREFIX_YEAR)) {
-    finalAge = "$firstPartAge - $lastPartAge $PREFIX_YEAR";
+  if (resultSortAges.first.contains(prefixMonth) &&
+      resultSortAges.last.contains(prefixMonth)) {
+    finalAge = "$firstPartAge - $lastPartAge $prefixMonth";
+  } else if (resultSortAges.first.contains(prefixYear) &&
+      resultSortAges.last.contains(prefixYear)) {
+    finalAge = "$firstPartAge - $lastPartAge $prefixYear";
   } else {
-    finalAge = "$firstPartAge $PREFIX_MONTH - $lastPartAge $PREFIX_YEAR";
+    finalAge = "$firstPartAge $prefixMonth - $lastPartAge $prefixYear";
   }
 
   return finalAge.toLowerCase();

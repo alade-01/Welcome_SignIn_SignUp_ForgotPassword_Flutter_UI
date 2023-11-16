@@ -26,10 +26,6 @@ class _SplashScreenState extends State<SplashScreen>
             .pushReplacementNamed(RouterGenerator.introRoute));
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-  }
 
 /*
   timerRun() async {

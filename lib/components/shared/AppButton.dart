@@ -76,7 +76,7 @@ class AppButton extends StatelessWidget {
               child: Text(
                 label,
                 style:
-                    const TextStyle(fontSize: 20, fontWeight: FontWeight.w700,fontFamily: PRIMARY_FONT),
+                    const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
               ),
             ),
     );
