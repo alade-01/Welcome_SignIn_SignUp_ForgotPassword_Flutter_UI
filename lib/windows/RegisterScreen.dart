@@ -8,20 +8,23 @@ import '../../core/constants.dart';
 import '../components/item/SocialNetworkItem.dart';
 import '../components/shared/background.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   //Initially password is obscure
-  bool _obscureText = true;
+  bool _obscureTextField_1 = true;
+  bool _obscureTextField_2 = true;
   bool loading = false;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   TextEditingController _emailController = TextEditingController(),
-      _passwordController = TextEditingController();
+      _passwordController = TextEditingController(),
+      _passwordControllerConfirm = TextEditingController()
+  ;
 
   @override
   void initState() {
@@ -48,14 +51,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      "Login here",
+                      "Create Account",
                       style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           color: primaryColor, fontSize: 30, fontWeight: FontWeight.w700),
                     ),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE * 2.5),
                     Text(
-                      "Welcome back you’ve "
-                          "been missed!",
+                      "Create an account so you can explore "
+                          "all the existing jobs",
                       style: Theme.of(context).textTheme.labelMedium!.copyWith(
                           color: Colors.black,
                           fontSize: 20,
@@ -110,7 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               cursorColor: Colors.black38,
                               style: textStyleInput,
                               controller: _passwordController,
-                              obscureText: _obscureText,
+                              obscureText: _obscureTextField_1,
                               decoration: InputDecoration(
                                 prefixIcon: const Icon(
                                   CupertinoIcons.lock,
@@ -119,11 +122,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                 suffixIcon: GestureDetector(
                                   onTap: () {
                                     setState(() {
-                                      _obscureText = !_obscureText;
+                                      _obscureTextField_1 = !_obscureTextField_1;
                                     });
                                   },
                                   child: Icon(
-                                    _obscureText
+                                    _obscureTextField_1
                                         ? Icons.visibility_off
                                         : Icons.visibility,
                                   ),
@@ -132,25 +135,43 @@ class _LoginScreenState extends State<LoginScreen> {
                               keyboardType: TextInputType.text,
                             ),
                           ),
-
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              InkWell(
-                                onTap: () {
-                                  Navigator.pushNamed(
-                                      context, RouterGenerator.forgotPasswordRoute);
-                                },
-                                child: Padding(
-                                  padding: EdgeInsets.all(5),
-                                  child: Text(
-                                    "Forgot your password? ?",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color: primaryColor),
+                          Container(
+                            margin:
+                            const EdgeInsets.symmetric(horizontal: 10,vertical: 15),
+                            child: TextFormField(
+                              validator: (String? value) {
+                                if (value != null && value.isEmpty) {
+                                  return "This field is required";
+                                }
+                                if (_passwordControllerConfirm != _passwordController) {
+                                  return "Different password";
+                                }
+                                return null;
+                              },
+                              cursorColor: Colors.black38,
+                              style: textStyleInput,
+                              controller: _passwordControllerConfirm,
+                              obscureText: _obscureTextField_2,
+                              decoration: InputDecoration(
+                                prefixIcon: const Icon(
+                                  CupertinoIcons.lock,
+                                ),
+                                hintText: "Confirm Password",
+                                suffixIcon: GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      _obscureTextField_2 = !_obscureTextField_2;
+                                    });
+                                  },
+                                  child: Icon(
+                                    _obscureTextField_2
+                                        ? Icons.visibility_off
+                                        : Icons.visibility,
                                   ),
                                 ),
                               ),
-                            ],
+                              keyboardType: TextInputType.text,
+                            ),
                           ),
                         ],
                       ),
@@ -164,7 +185,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         }
                       },
                       loading: loading,
-                      label: "Sign in",
+                      label: "Sign up",
                       buttonType: ButtonType.PRIMARY,
                       width: size.width,
                       horizontalPadding: 10,
@@ -173,12 +194,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     InkWell(
                       onTap: () {
                         Navigator.pushNamed(
-                            context, RouterGenerator.registerRoute);
+                            context, RouterGenerator.loginRoute);
                       },
                       child: const Padding(
                         padding: EdgeInsets.all(5),
                         child: Text(
-                          "Create new account",
+                          "Already have an account",
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Color(0xFF494949),fontWeight: FontWeight.w600,fontSize: 14),
                         ),

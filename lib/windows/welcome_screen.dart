@@ -64,7 +64,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           child: InkWell(
                             onTap: () {
                               Navigator.pushNamed(
-                                  context, RouterGenerator.loginRoute);
+                                  context, RouterGenerator.registerRoute);
                             },
                             child: const Padding(
                               padding: EdgeInsets.all(0),
@@ -73,7 +73,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                     fontSize: 20,
-                                    fontWeight: FontWeight.w700,fontFamily: PRIMARY_FONT,
+                                    fontWeight: FontWeight.w600,fontFamily: PRIMARY_FONT,
                                     color: Colors.black),
                               ),
                             ),
