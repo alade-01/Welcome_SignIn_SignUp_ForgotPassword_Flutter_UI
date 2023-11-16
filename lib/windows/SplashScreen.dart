@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:onboarding_login_register_app_ui/components/shared/background.dart';
 
 import '../core/RouterGenerator.dart';
 
@@ -41,9 +42,9 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Stack(
+    return Background(
+      //backgroundColor: Colors.white,
+      child: Stack(
         children: [
           Positioned(
             left: 120,
@@ -82,7 +83,7 @@ class _SplashScreenState extends State<SplashScreen>
               children: [
                 Text(
                     //translate.text("app_copyright"),
-                    "Welcome to App"),
+                    "Welcome to GoodJob"),
               ],
             ),
           )
