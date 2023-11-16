@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:onboarding_login_register_app_ui/windows/LoginScreen.dart';
 import 'package:onboarding_login_register_app_ui/windows/RegisterScreen.dart';
 
+import '../windows/ForgotPasswordScreen.dart';
 import '../windows/SplashScreen.dart';
 import '../windows/welcome_screen.dart';
 
@@ -39,6 +40,10 @@ class RouterGenerator {
         case RouterGenerator.registerRoute:
         return MaterialPageRoute(
           builder: (_) => const RegisterScreen(),
+        );
+        case RouterGenerator.forgotPasswordRoute:
+        return MaterialPageRoute(
+          builder: (_) => const ForgotPasswordScreen(),
         );
       default:
         return MaterialPageRoute(
