@@ -42,7 +42,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               "Enter your email to receive the code to change your password",
               style: Theme.of(context).textTheme.labelMedium!.copyWith(
                   color: Colors.black,
-                  fontSize: 20,
+                  fontSize: 14,
                   fontWeight: FontWeight.w600),
               textAlign: TextAlign.center,
             ),
@@ -54,7 +54,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   Container(
                     margin: const EdgeInsets.symmetric(horizontal: 10),
                     child: TextFormField(
-                      cursorColor: Colors.black38,
+                      cursorColor: Color(0xFF626262),
                       controller: emailControler,
                       validator: (String? value) {
                         if (value != null && value.isEmpty) {

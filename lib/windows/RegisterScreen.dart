@@ -61,8 +61,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           "all the existing jobs",
                       style: Theme.of(context).textTheme.labelMedium!.copyWith(
                           color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE * 4.5),
@@ -77,7 +77,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 .copyWith(bottom: 10),
                             child: TextFormField(
                               controller: _emailController,
-                              cursorColor: Colors.black38,
+                              cursorColor: Color(0xFF626262),
                               style: textStyleInput,
                               validator: (String? value) {
                                 if (value != null && value.isEmpty) {
@@ -110,7 +110,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                                 return null;
                               },
-                              cursorColor: Colors.black38,
+                              cursorColor: Color(0xFF626262),
                               style: textStyleInput,
                               controller: _passwordController,
                               obscureText: _obscureTextField_1,
@@ -148,7 +148,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 }
                                 return null;
                               },
-                              cursorColor: Colors.black38,
+                              cursorColor: Color(0xFF626262),
                               style: textStyleInput,
                               controller: _passwordControllerConfirm,
                               obscureText: _obscureTextField_2,

@@ -74,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 .copyWith(bottom: 10),
                             child: TextFormField(
                               controller: _emailController,
-                              cursorColor: Colors.black38,
+                              cursorColor: Color(0xFF626262),
                               style: textStyleInput,
                               validator: (String? value) {
                                 if (value != null && value.isEmpty) {
@@ -107,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                                 return null;
                               },
-                              cursorColor: Colors.black38,
+                              cursorColor: Color(0xFF626262),
                               style: textStyleInput,
                               controller: _passwordController,
                               obscureText: _obscureText,
@@ -144,7 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 child: Padding(
                                   padding: EdgeInsets.all(5),
                                   child: Text(
-                                    "Forgot your password? ?",
+                                    "Forgot your password?",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color: primaryColor),
                                   ),

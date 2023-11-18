@@ -60,16 +60,16 @@ class ThemeCubit extends Cubit<ThemeData> {
     ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: const Color(0xFFF9F9F9),
+      fillColor: const Color(0xFFF1F4FF),
       //constraints: const BoxConstraints(maxHeight: 65),
       labelStyle: const TextStyle(
-        color: textColor,
-        fontWeight: FontWeight.bold,
-        fontSize: 14,
+        color: Color(0xFF626262),
+        fontWeight: FontWeight.w600,
+        fontSize: 16,
       ),
-      iconColor: Colors.black38,
-      prefixIconColor: Colors.black38,
-      suffixIconColor: Colors.black38,
+      iconColor: Color(0xFF626262),
+      prefixIconColor: Color(0xFF626262),
+      suffixIconColor: Color(0xFF626262),
 
       contentPadding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
       border: OutlineInputBorder(
@@ -80,22 +80,20 @@ class ThemeCubit extends Cubit<ThemeData> {
         color: Color(0xFFF9F9F9),
         width: 1,
       ),
-      disabledBorder: const OutlineInputBorder(
-        borderSide: BorderSide.none,
-      ),
-      focusColor: Colors.black38,
+
+      focusColor: Color(0xFF626262),
       hintStyle: const TextStyle(
-        fontSize: 14,
-        //fontWeight: FontWeight.w600,
-        color: Colors.black38,
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+        color: Color(0xFF626262),
       ),
       errorStyle: const TextStyle(
           fontSize: 14, fontFamily: SECONDARY_FONT, color: Colors.redAccent),
       enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(width: 0.7, color: Colors.black38),
+          borderSide: const BorderSide(width: 0.7, color: Colors.white),
           borderRadius: BorderRadius.circular(10)),
       focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(width: 0.7, color: Colors.black38),
+          borderSide: BorderSide(width: 0.7, color: primaryColor),
           borderRadius: BorderRadius.circular(10)),
       errorBorder: OutlineInputBorder(
           borderSide: const BorderSide(width: 0.7, color: Colors.redAccent),
@@ -121,6 +119,7 @@ class ThemeCubit extends Cubit<ThemeData> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
+
     ),
     cardTheme: CardTheme(
       shape: const RoundedRectangleBorder(

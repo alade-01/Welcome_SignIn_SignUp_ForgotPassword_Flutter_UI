@@ -75,15 +75,20 @@ class _SplashScreenState extends State<SplashScreen>
               child: CircularProgressIndicator(),
             ),
           ),
-          const Positioned(
+          Positioned(
             bottom: 20,
             right: 0,
             left: 0,
             child: Column(
               children: [
                 Text(
-                    //translate.text("app_copyright"),
-                    "Welcome to GoodJob"),
+                  "Welcome to GoodJob",
+                  style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
+                 // textAlign: TextAlign.center,
+                ),
               ],
             ),
           )

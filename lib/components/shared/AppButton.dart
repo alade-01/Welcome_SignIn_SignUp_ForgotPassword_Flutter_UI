@@ -75,8 +75,10 @@ class AppButton extends StatelessWidget {
               ),
               child: Text(
                 label,
-                style:
-                    const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600),
               ),
             ),
     );
