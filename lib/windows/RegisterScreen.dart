@@ -225,13 +225,4 @@ class _RegisterScreenState extends State<RegisterScreen> {
       ),
     );
   }
-
-  void showError(BuildContext context, String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        backgroundColor: Colors.red,
-      ),
-    );
-  }
 }
