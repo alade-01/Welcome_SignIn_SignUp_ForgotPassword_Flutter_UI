@@ -15,7 +15,6 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
-  bool hasToken = false;
   bool startAnimated = false;
 
   @override
@@ -23,8 +22,8 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
     Timer(
         const Duration(seconds: 3),
-        () => Navigator.of(context)
-            .pushReplacementNamed(RouterGenerator.introRoute)
+            () => Navigator.of(context)
+                .pushReplacementNamed(RouterGenerator.introRoute)
     );
   }
 
@@ -74,7 +73,6 @@ class _SplashScreenState extends State<SplashScreen>
                       fontSize: 14,
                       fontWeight: FontWeight.w600
                   ),
-                  // textAlign: TextAlign.center,
                 ),
               ],
             ),
