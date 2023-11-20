@@ -15,9 +15,8 @@ class ForgotPasswordScreen extends StatefulWidget {
 }
 
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
-  bool isLoading = false;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  TextEditingController emailControler = TextEditingController();
+  final TextEditingController emailControler = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +36,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   color: primaryColor,
                   fontSize: 30,
-                  fontWeight: FontWeight.w700),
+                  fontWeight: FontWeight.w700
+              ),
             ),
             const SizedBox(height: BUTTON_SEPARATION_SPACE * 2.5),
             Text(
@@ -45,7 +45,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               style: Theme.of(context).textTheme.labelMedium!.copyWith(
                   color: Colors.black,
                   fontSize: 14,
-                  fontWeight: FontWeight.w600),
+                  fontWeight: FontWeight.w600
+              ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: BUTTON_SEPARATION_SPACE * 6),
@@ -70,7 +71,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         return null;
                       },
                       style: textStyleInput,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         prefixIcon: Icon(CupertinoIcons.at),
                         hintText: "Email",
                       ),
@@ -86,7 +87,6 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 if (formKey.currentState!.validate()) {}
               },
               label: "Receive my code",
-              loading: isLoading,
               buttonType: ButtonType.PRIMARY,
               width: size.width,
               horizontalPadding: 10,
@@ -104,7 +104,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   style: TextStyle(
                       color: Color(0xFF494949),
                       fontWeight: FontWeight.w600,
-                      fontSize: 14),
+                      fontSize: 14
+                  ),
                 ),
               ),
             ),
@@ -112,15 +113,5 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         ),
       ),
     ));
-  }
-
-  void showMessage(BuildContext context, String message,
-      {Color color = Colors.red}) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text("${message}"),
-        backgroundColor: primaryColor,
-      ),
-    );
   }
 }
