@@ -15,20 +15,26 @@ class OnboardingItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery
+        .of(context)
+        .size;
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
         Expanded(
             child: SvgPicture.asset(
-          image!,
-          width: size.height / 0.5,
-        )),
+              image!,
+              width: size.height / 0.5,
+            )),
         Padding(
           padding: const EdgeInsets.only(top: 25, bottom: 20),
           child: Text(
             title!,
-            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+            style: Theme
+                .of(context)
+                .textTheme
+                .titleLarge!
+                .copyWith(
                 color: primaryColor, fontSize: 35, fontWeight: FontWeight.w600),
             textAlign: TextAlign.center,
           ),
@@ -37,10 +43,12 @@ class OnboardingItem extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Text(
             text!,
-            style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                color: Colors.black,
-                fontSize: 14,
-                fontWeight: FontWeight.w400),
+            style: Theme
+                .of(context)
+                .textTheme
+                .labelMedium!
+                .copyWith(
+                color: Colors.black, fontSize: 14, fontWeight: FontWeight.w400),
             textAlign: TextAlign.center,
           ),
         )

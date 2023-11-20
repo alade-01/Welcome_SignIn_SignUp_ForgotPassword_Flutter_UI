@@ -35,7 +35,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             Text(
               "Forgot Password",
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                  color: primaryColor, fontSize: 30, fontWeight: FontWeight.w700),
+                  color: primaryColor,
+                  fontSize: 30,
+                  fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: BUTTON_SEPARATION_SPACE * 2.5),
             Text(
@@ -69,8 +71,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       },
                       style: textStyleInput,
                       decoration: InputDecoration(
-                        prefixIcon:
-                        Icon(CupertinoIcons.at),
+                        prefixIcon: Icon(CupertinoIcons.at),
                         hintText: "Email",
                       ),
                       keyboardType: TextInputType.text,
@@ -93,23 +94,24 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             const SizedBox(height: BUTTON_SEPARATION_SPACE),
             InkWell(
               onTap: () {
-                Navigator.pushNamed(
-                    context, RouterGenerator.loginRoute);
+                Navigator.pushNamed(context, RouterGenerator.loginRoute);
               },
               child: const Padding(
                 padding: EdgeInsets.all(5),
                 child: Text(
                   "To come back",
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Color(0xFF494949),fontWeight: FontWeight.w600,fontSize: 14),
+                  style: TextStyle(
+                      color: Color(0xFF494949),
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14),
                 ),
               ),
             ),
           ],
         ),
       ),
-    )
-    );
+    ));
   }
 
   void showMessage(BuildContext context, String message,

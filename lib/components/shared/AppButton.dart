@@ -36,7 +36,7 @@ class AppButton extends StatelessWidget {
           .copyWith(bottom: 5),
       margin: const EdgeInsets.symmetric(horizontal: 10),
       width: width,
-      height: min(width / 1,50),
+      height: min(width / 1, 50),
       child: loading
           ? Center(
               child: CircularProgressIndicator(
@@ -76,9 +76,9 @@ class AppButton extends StatelessWidget {
               child: Text(
                 label,
                 style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                  fontSize: 20,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600),
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600),
               ),
             ),
     );

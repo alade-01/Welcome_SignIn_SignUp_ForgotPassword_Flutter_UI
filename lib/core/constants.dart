@@ -63,7 +63,8 @@ const SECONDARY_FONT = "Lato";
 
 const USED_FONT = PRIMARY_FONT;
 
-TextStyle textStyleInput = const TextStyle(color: Color(0xFF626262), fontSize: 17);
+TextStyle textStyleInput =
+    const TextStyle(color: Color(0xFF626262), fontSize: 17);
 
 //0xFFEA097F #EA097F
 Map<int, Color> color3 = {

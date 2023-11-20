@@ -37,11 +37,11 @@ class RouterGenerator {
         return MaterialPageRoute(
           builder: (_) => const LoginScreen(),
         );
-        case RouterGenerator.registerRoute:
+      case RouterGenerator.registerRoute:
         return MaterialPageRoute(
           builder: (_) => const RegisterScreen(),
         );
-        case RouterGenerator.forgotPasswordRoute:
+      case RouterGenerator.forgotPasswordRoute:
         return MaterialPageRoute(
           builder: (_) => const ForgotPasswordScreen(),
         );

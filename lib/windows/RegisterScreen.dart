@@ -17,26 +17,19 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   //Initially password is obscure
-  bool _obscureTextField_1 = true;
-  bool _obscureTextField_2 = true;
-  bool loading = false;
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  TextEditingController _emailController = TextEditingController(),
-      _passwordController = TextEditingController(),
-      _passwordControllerConfirm = TextEditingController()
-  ;
+  bool _obscureTextField_1 = true,
+      _obscureTextField_2 = true,loading = false;
 
-  @override
-  void initState() {
-    super.initState();
-  }
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  final TextEditingController _emailController = TextEditingController(),
+      _passwordController = TextEditingController(),
+      _passwordControllerConfirm = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
     return Background(
-      //backgroundColor: Colors.white,
       child: SizedBox(
         width: size.width,
         height: size.height,
@@ -53,16 +46,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     Text(
                       "Create Account",
                       style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          color: primaryColor, fontSize: 30, fontWeight: FontWeight.w700),
+                          color: primaryColor,
+                          fontSize: 30,
+                          fontWeight: FontWeight.w700
+                      ),
                     ),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE * 2.5),
                     Text(
-                      "Create an account so you can explore "
-                          "all the existing jobs",
+                      "Create an account so you can explore"
+                      "all the existing jobs",
                       style: Theme.of(context).textTheme.labelMedium!.copyWith(
                           color: Colors.black,
                           fontSize: 14,
-                          fontWeight: FontWeight.w500),
+                          fontWeight: FontWeight.w500
+                      ),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE * 4.5),
@@ -71,10 +68,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       child: Column(
                         children: [
                           Container(
-                            margin:
-                            const EdgeInsets.symmetric(horizontal: 10)
-                                .copyWith(top: 10)
-                                .copyWith(bottom: 10),
+                            margin: const EdgeInsets.symmetric(horizontal: 10)
+                                .copyWith(top: 10,bottom: 10),
                             child: TextFormField(
                               controller: _emailController,
                               cursorColor: Color(0xFF626262),
@@ -100,14 +95,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                           ),
                           Container(
-                            margin:
-                            const EdgeInsets.symmetric(horizontal: 10,vertical: 15),
+                            margin: const EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 15),
                             child: TextFormField(
                               validator: (String? value) {
                                 if (value != null && value.isEmpty) {
                                   return "This field is required";
                                 }
-
                                 return null;
                               },
                               cursorColor: Color(0xFF626262),
@@ -122,7 +116,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 suffixIcon: GestureDetector(
                                   onTap: () {
                                     setState(() {
-                                      _obscureTextField_1 = !_obscureTextField_1;
+                                      _obscureTextField_1 =
+                                          !_obscureTextField_1;
                                     });
                                   },
                                   child: Icon(
@@ -136,14 +131,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                           ),
                           Container(
-                            margin:
-                            const EdgeInsets.symmetric(horizontal: 10,vertical: 15),
+                            margin: const EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 15),
                             child: TextFormField(
                               validator: (String? value) {
                                 if (value != null && value.isEmpty) {
                                   return "This field is required";
                                 }
-                                if (_passwordControllerConfirm != _passwordController) {
+                                if (_passwordControllerConfirm !=
+                                    _passwordController) {
                                   return "Different password";
                                 }
                                 return null;
@@ -160,7 +156,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 suffixIcon: GestureDetector(
                                   onTap: () {
                                     setState(() {
-                                      _obscureTextField_2 = !_obscureTextField_2;
+                                      _obscureTextField_2 =
+                                          !_obscureTextField_2;
                                     });
                                   },
                                   child: Icon(
@@ -179,7 +176,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     const SizedBox(height: BUTTON_SEPARATION_SPACE * 1.8),
                     AppButton(
                       callback: () {
-
                         if (formKey.currentState!.validate()) {
                           print(_emailController.text);
                         }
@@ -201,18 +197,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         child: Text(
                           "Already have an account",
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Color(0xFF494949),fontWeight: FontWeight.w600,fontSize: 14),
+                          style: TextStyle(
+                              color: Color(0xFF494949),
+                              fontWeight: FontWeight.w600,
+                              fontSize: 14
+                          ),
                         ),
                       ),
                     ),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE * 5),
                     Container(
-                        margin:
-                        const EdgeInsets.symmetric(horizontal: 10),
+                        margin: const EdgeInsets.symmetric(horizontal: 10),
                         child: Text("Or continue with",
-                            style: TextStyle(fontWeight: FontWeight.w600,fontSize: 14,color:primaryColor))),
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 14,
+                                color: primaryColor))),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE),
-                    SocialNetworkItem(),
+                    const SocialNetworkItem(),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE),
                   ],
                 ),

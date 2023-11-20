@@ -119,7 +119,6 @@ class ThemeCubit extends Cubit<ThemeData> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
-
     ),
     cardTheme: CardTheme(
       shape: const RoundedRectangleBorder(

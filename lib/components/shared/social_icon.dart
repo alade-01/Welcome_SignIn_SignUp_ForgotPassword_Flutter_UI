@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../core/constants.dart';
 
 class SocalIcon extends StatelessWidget {
   final String? iconSrc;
   final Function? press;
+
   const SocalIcon({
     Key? key,
     this.iconSrc,
@@ -17,11 +17,11 @@ class SocalIcon extends StatelessWidget {
       onTap: press as void Function()?,
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 10),
-        padding: const EdgeInsets.only(top: 15,bottom: 15, left: 20,right: 20),
+        padding:
+            const EdgeInsets.only(top: 15, bottom: 15, left: 20, right: 20),
         decoration: const BoxDecoration(
-          color: Color(0xFFECECEC),
-          borderRadius: BorderRadius.all(Radius.circular(10))
-        ),
+            color: Color(0xFFECECEC),
+            borderRadius: BorderRadius.all(Radius.circular(10))),
         child: SvgPicture.asset(
           iconSrc!,
           height: 20,

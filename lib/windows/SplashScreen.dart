@@ -24,26 +24,13 @@ class _SplashScreenState extends State<SplashScreen>
     Timer(
         const Duration(seconds: 3),
         () => Navigator.of(context)
-            .pushReplacementNamed(RouterGenerator.introRoute));
+            .pushReplacementNamed(RouterGenerator.introRoute)
+    );
   }
-
-
-/*
-  timerRun() async {
-    Timer(const Duration(seconds: 0), onDoneLoading);
-
-    startAnimated = true;
-    setState(() {});
-  }
-
-  onDoneLoading() async {
-    Navigator.of(context).pushReplacementNamed(RouterGenerator.introRoute);
-  }*/
 
   @override
   Widget build(BuildContext context) {
     return Background(
-      //backgroundColor: Colors.white,
       child: Stack(
         children: [
           Positioned(
@@ -62,7 +49,6 @@ class _SplashScreenState extends State<SplashScreen>
                 "res/logos/logo_app.svg",
                 width: 70,
                 fit: BoxFit.contain,
-                //repeat: ImageRepeat.noRepeat,
               ),
             ),
           ),
@@ -86,8 +72,9 @@ class _SplashScreenState extends State<SplashScreen>
                   style: Theme.of(context).textTheme.labelMedium!.copyWith(
                       color: Colors.black,
                       fontSize: 14,
-                      fontWeight: FontWeight.w600),
-                 // textAlign: TextAlign.center,
+                      fontWeight: FontWeight.w600
+                  ),
+                  // textAlign: TextAlign.center,
                 ),
               ],
             ),

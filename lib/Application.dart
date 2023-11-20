@@ -62,7 +62,7 @@ class ApplicationWithTheme extends StatelessWidget {
               //navigatorKey: locator<NavigationService>().navigatorKey,
               //supportedLocales: translate.supportedLocales(),
               //title: translate.text("app_name"),
-              title: "Onboarding",
+              title: "GoodJob",
               theme: theme,
               debugShowCheckedModeBanner: false,
               initialRoute: RouterGenerator.splashRoute,

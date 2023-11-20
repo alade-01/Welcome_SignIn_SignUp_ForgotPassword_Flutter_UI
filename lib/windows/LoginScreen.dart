@@ -50,12 +50,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     Text(
                       "Login here",
                       style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          color: primaryColor, fontSize: 30, fontWeight: FontWeight.w700),
+                          color: primaryColor,
+                          fontSize: 30,
+                          fontWeight: FontWeight.w700),
                     ),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE * 2.5),
                     Text(
                       "Welcome back you’ve "
-                          "been missed!",
+                      "been missed!",
                       style: Theme.of(context).textTheme.labelMedium!.copyWith(
                           color: Colors.black,
                           fontSize: 20,
@@ -68,8 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Column(
                         children: [
                           Container(
-                            margin:
-                            const EdgeInsets.symmetric(horizontal: 10)
+                            margin: const EdgeInsets.symmetric(horizontal: 10)
                                 .copyWith(top: 10)
                                 .copyWith(bottom: 10),
                             child: TextFormField(
@@ -97,8 +98,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                           Container(
-                            margin:
-                            const EdgeInsets.symmetric(horizontal: 10,vertical: 15),
+                            margin: const EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 15),
                             child: TextFormField(
                               validator: (String? value) {
                                 if (value != null && value.isEmpty) {
@@ -132,21 +133,23 @@ class _LoginScreenState extends State<LoginScreen> {
                               keyboardType: TextInputType.text,
                             ),
                           ),
-
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               InkWell(
                                 onTap: () {
-                                  Navigator.pushNamed(
-                                      context, RouterGenerator.forgotPasswordRoute);
+                                  Navigator.pushNamed(context,
+                                      RouterGenerator.forgotPasswordRoute);
                                 },
                                 child: Padding(
                                   padding: EdgeInsets.all(5),
                                   child: Text(
                                     "Forgot your password?",
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color: primaryColor),
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w600,
+                                        color: primaryColor),
                                   ),
                                 ),
                               ),
@@ -158,7 +161,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     const SizedBox(height: BUTTON_SEPARATION_SPACE * 1.8),
                     AppButton(
                       callback: () {
-
                         if (formKey.currentState!.validate()) {
                           print(_emailController.text);
                         }
@@ -180,16 +182,21 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Text(
                           "Create new account",
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Color(0xFF494949),fontWeight: FontWeight.w600,fontSize: 14),
+                          style: TextStyle(
+                              color: Color(0xFF494949),
+                              fontWeight: FontWeight.w600,
+                              fontSize: 14),
                         ),
                       ),
                     ),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE * 5),
                     Container(
-                        margin:
-                        const EdgeInsets.symmetric(horizontal: 10),
+                        margin: const EdgeInsets.symmetric(horizontal: 10),
                         child: Text("Or continue with",
-                            style: TextStyle(fontWeight: FontWeight.w600,fontSize: 14,color:primaryColor))),
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 14,
+                                color: primaryColor))),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE),
                     SocialNetworkItem(),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE),

@@ -38,7 +38,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               child: OnboardingItem(
                 title: "Discover Your \n Dream Job Here",
                 image: "res/images/imageHoneApp.svg",
-                text: "Explore all the existing job roles based on your \n interest and study major",
+                text:
+                    "Explore all the existing job roles based on your \n interest and study major",
               ),
             ),
             Expanded(
@@ -73,7 +74,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                     fontSize: 20,
-                                    fontWeight: FontWeight.w600,fontFamily: PRIMARY_FONT,
+                                    fontWeight: FontWeight.w600,
+                                    fontFamily: PRIMARY_FONT,
                                     color: Colors.black),
                               ),
                             ),
