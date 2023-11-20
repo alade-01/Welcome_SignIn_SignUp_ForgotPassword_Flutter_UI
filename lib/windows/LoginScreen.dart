@@ -17,23 +17,17 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   //Initially password is obscure
-  bool _obscureText = true;
-  bool loading = false;
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  TextEditingController _emailController = TextEditingController(),
-      _passwordController = TextEditingController();
+  bool _obscureText = true,loading = false ;
 
-  @override
-  void initState() {
-    super.initState();
-  }
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  final TextEditingController _emailController = TextEditingController(),
+      _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
     return Background(
-      //backgroundColor: Colors.white,
       child: SizedBox(
         width: size.width,
         height: size.height,
@@ -52,7 +46,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           color: primaryColor,
                           fontSize: 30,
-                          fontWeight: FontWeight.w700),
+                          fontWeight: FontWeight.w700
+                      ),
                     ),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE * 2.5),
                     Text(
@@ -61,7 +56,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: Theme.of(context).textTheme.labelMedium!.copyWith(
                           color: Colors.black,
                           fontSize: 20,
-                          fontWeight: FontWeight.w600),
+                          fontWeight: FontWeight.w600
+                      ),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE * 4.5),
@@ -71,8 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         children: [
                           Container(
                             margin: const EdgeInsets.symmetric(horizontal: 10)
-                                .copyWith(top: 10)
-                                .copyWith(bottom: 10),
+                                .copyWith(top: 10,bottom: 10),
                             child: TextFormField(
                               controller: _emailController,
                               cursorColor: Color(0xFF626262),
@@ -105,7 +100,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                 if (value != null && value.isEmpty) {
                                   return "This field is required";
                                 }
-
                                 return null;
                               },
                               cursorColor: Color(0xFF626262),
@@ -142,14 +136,15 @@ class _LoginScreenState extends State<LoginScreen> {
                                       RouterGenerator.forgotPasswordRoute);
                                 },
                                 child: Padding(
-                                  padding: EdgeInsets.all(5),
+                                  padding: const EdgeInsets.all(5),
                                   child: Text(
                                     "Forgot your password?",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w600,
-                                        color: primaryColor),
+                                        color: primaryColor
+                                    ),
                                   ),
                                 ),
                               ),
@@ -185,7 +180,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           style: TextStyle(
                               color: Color(0xFF494949),
                               fontWeight: FontWeight.w600,
-                              fontSize: 14),
+                              fontSize: 14
+                          ),
                         ),
                       ),
                     ),
@@ -198,7 +194,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 fontSize: 14,
                                 color: primaryColor))),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE),
-                    SocialNetworkItem(),
+                    const SocialNetworkItem(),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE),
                   ],
                 ),
@@ -206,15 +202,6 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  void showError(BuildContext context, String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        backgroundColor: Colors.red,
       ),
     );
   }
