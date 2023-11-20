@@ -15,16 +15,6 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Background(
@@ -38,8 +28,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               child: OnboardingItem(
                 title: "Discover Your \n Dream Job Here",
                 image: "res/images/imageHoneApp.svg",
-                text:
-                    "Explore all the existing job roles based on your \n interest and study major",
+                text: "Explore all the existing job roles based on your \n interest and study major",
               ),
             ),
             Expanded(
@@ -58,14 +47,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                   context, RouterGenerator.loginRoute),
                               label: "Login",
                               buttonType: ButtonType.PRIMARY,
-                              //width: size.width,
-                              horizontalPadding: 10.0),
+                              horizontalPadding: 10.0
+                          ),
                         ),
                         Expanded(
                           child: InkWell(
                             onTap: () {
-                              Navigator.pushNamed(
-                                  context, RouterGenerator.registerRoute);
+                              Navigator.pushNamed(context, RouterGenerator.registerRoute);
                             },
                             child: const Padding(
                               padding: EdgeInsets.all(0),
@@ -76,7 +64,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                     fontSize: 20,
                                     fontWeight: FontWeight.w600,
                                     fontFamily: PRIMARY_FONT,
-                                    color: Colors.black),
+                                    color: Colors.black
+                                ),
                               ),
                             ),
                           ),
