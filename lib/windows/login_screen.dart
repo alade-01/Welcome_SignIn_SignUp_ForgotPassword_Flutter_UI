@@ -68,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             margin: const EdgeInsets.only(top: 10),
                             child: TextFormField(
                               controller: _emailController,
-                              style: textStyleInput,
+                             // style: textStyleInput,
                               validator: (String? value) {
                                 if (value != null && value.isEmpty) {
                                   return "This field is required";

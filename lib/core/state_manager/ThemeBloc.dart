@@ -11,7 +11,7 @@ class ThemeCubit extends Cubit<ThemeData> {
   ThemeCubit() : super(_lightTheme);
 
   static final baseTheme = ThemeData(
-    // scaffoldBackgroundColor: color3[300],
+    scaffoldBackgroundColor: Colors.white,
     //primarySwatch: primarySwatchColor,
     primaryColor: primaryColor,
     fontFamily: USED_FONT,
@@ -63,32 +63,31 @@ class ThemeCubit extends Cubit<ThemeData> {
       fillColor: const Color(0xFFF1F4FF),
       //constraints: const BoxConstraints(maxHeight: 65),
       labelStyle: TextStyle(
-        color: secondaryColor,
+        color: primaryColor,
         fontWeight: FontWeight.w600,
         fontSize: 16,
       ),
       iconColor: secondaryColor,
       prefixIconColor: secondaryColor,
       suffixIconColor: secondaryColor,
-
       contentPadding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(5.0),
-        borderSide: const BorderSide(width: 0.7, color: Colors.black38),
+        borderRadius: BorderRadius.circular(10.0),
+        borderSide: const BorderSide(width: 0, color: Colors.black38),
       ),
       outlineBorder: const BorderSide(
-        color: Color(0xFFF9F9F9),
+        color: Colors.redAccent,
         width: 1,
       ),
 
-      focusColor: secondaryColor,
+     // focusColor: secondaryColor,
       hintStyle: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w500,
         color: secondaryColor,
       ),
       errorStyle: const TextStyle(
-          fontSize: 14, fontFamily: SECONDARY_FONT, color: Colors.redAccent),
+          fontSize: 12, fontFamily: PRIMARY_FONT, color: Colors.redAccent),
       enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(width: 0.7, color: Colors.white),
           borderRadius: BorderRadius.circular(10)),
