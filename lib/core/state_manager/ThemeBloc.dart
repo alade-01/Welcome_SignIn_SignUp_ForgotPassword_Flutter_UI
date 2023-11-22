@@ -47,7 +47,6 @@ class ThemeCubit extends Cubit<ThemeData> {
       ),
       labelSmall: const TextStyle(
         color: Colors.black38,
-        //fontWeight: FontWeight.w500,
         fontSize: 16 / 0.8,
         decoration: TextDecoration.none,
       ),
