@@ -12,14 +12,14 @@ class ThemeCubit extends Cubit<ThemeData> {
 
   static final baseTheme = ThemeData(
     // scaffoldBackgroundColor: color3[300],
-    primarySwatch: primarySwatchColor,
+    //primarySwatch: primarySwatchColor,
     primaryColor: primaryColor,
     fontFamily: USED_FONT,
     appBarTheme: AppBarTheme(
       elevation: 0,
       shadowColor: secondaryColor.shade50,
       // systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: primaryColor),
-      backgroundColor: color3[300],
+      //backgroundColor: color3[300],
       titleTextStyle: TextStyle(
         color: primaryColor,
         fontSize: 26 / 0.8,
@@ -62,14 +62,14 @@ class ThemeCubit extends Cubit<ThemeData> {
       filled: true,
       fillColor: const Color(0xFFF1F4FF),
       //constraints: const BoxConstraints(maxHeight: 65),
-      labelStyle: const TextStyle(
-        color: Color(0xFF626262),
+      labelStyle: TextStyle(
+        color: secondaryColor,
         fontWeight: FontWeight.w600,
         fontSize: 16,
       ),
-      iconColor: Color(0xFF626262),
-      prefixIconColor: Color(0xFF626262),
-      suffixIconColor: Color(0xFF626262),
+      iconColor: secondaryColor,
+      prefixIconColor: secondaryColor,
+      suffixIconColor: secondaryColor,
 
       contentPadding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
       border: OutlineInputBorder(
@@ -81,11 +81,11 @@ class ThemeCubit extends Cubit<ThemeData> {
         width: 1,
       ),
 
-      focusColor: Color(0xFF626262),
-      hintStyle: const TextStyle(
+      focusColor: secondaryColor,
+      hintStyle: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w500,
-        color: Color(0xFF626262),
+        color: secondaryColor,
       ),
       errorStyle: const TextStyle(
           fontSize: 14, fontFamily: SECONDARY_FONT, color: Colors.redAccent),
@@ -181,5 +181,3 @@ class ThemeCubit extends Cubit<ThemeData> {
     emit(state.brightness == Brightness.dark ? _lightTheme : _darkTheme);
   }
 }
-
-const defaultLetterSpacing = 0.03;

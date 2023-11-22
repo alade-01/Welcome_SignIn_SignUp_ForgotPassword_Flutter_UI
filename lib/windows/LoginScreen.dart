@@ -17,7 +17,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   //Initially password is obscure
-  bool _obscureText = true,loading = false ;
+  bool _obscureText = true,loading = false;
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
@@ -70,7 +70,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                 .copyWith(top: 10,bottom: 10),
                             child: TextFormField(
                               controller: _emailController,
-                              cursorColor: Color(0xFF626262),
                               style: textStyleInput,
                               validator: (String? value) {
                                 if (value != null && value.isEmpty) {
@@ -102,7 +101,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                 }
                                 return null;
                               },
-                              cursorColor: Color(0xFF626262),
                               style: textStyleInput,
                               controller: _passwordController,
                               obscureText: _obscureText,

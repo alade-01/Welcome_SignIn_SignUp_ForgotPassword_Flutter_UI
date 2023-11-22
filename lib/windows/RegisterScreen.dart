@@ -72,7 +72,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 .copyWith(top: 10,bottom: 10),
                             child: TextFormField(
                               controller: _emailController,
-                              cursorColor: Color(0xFF626262),
+                            //  cursorColor: Color(0xFF626262),
                               style: textStyleInput,
                               validator: (String? value) {
                                 if (value != null && value.isEmpty) {
@@ -104,7 +104,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 }
                                 return null;
                               },
-                              cursorColor: Color(0xFF626262),
+                             // cursorColor: Color(0xFF626262),
                               style: textStyleInput,
                               controller: _passwordController,
                               obscureText: _obscureTextField_1,
@@ -144,7 +144,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 }
                                 return null;
                               },
-                              cursorColor: Color(0xFF626262),
+                             // cursorColor: Color(0xFF626262),
                               style: textStyleInput,
                               controller: _passwordControllerConfirm,
                               obscureText: _obscureTextField_2,

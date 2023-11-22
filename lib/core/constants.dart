@@ -1,30 +1,4 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
-const String TOKEN = "auth_token_kicktoys#^%561";
-const String BASE_URL_DEV =
-    "kidimi-api.poc-demo.com"; // "192.168.1.28:8089"; //"http://195.110.34.74:8095";//
-const String BASE_URL_PROD = "kidimi-api.poc-demo.com";
-
-const String SCHEME = kReleaseMode || kProfileMode ? "https" : "https";
-const String BASE_HOST = kReleaseMode || kProfileMode
-    ? BASE_URL_PROD
-    : BASE_URL_DEV; // BASE_URL_DEV;
-
-const String BASE_URL = '$SCHEME://$BASE_HOST';
-const String storageKey = "kicktoysApplication_";
-const String storageTokenSuffix = "jwtToken";
-const String storageCountrySuffix = "countryCode";
-const String storageCountryDataSuffix = "country";
-const String storageConfigSuffix = "appConfig";
-const String storageUserTypeSuffix = "userType";
-const String storageAlreadyReadIntro = "AlreadyReadIntro";
-const String storageDeviceTokenSuffix = "FcmToken";
-const String storageUserSuffix = "UserConnected";
-const String storageProfilCopmletSuffix = "ProfilCompleted";
-const String storageIntroReadSuffix = "IntroReaded";
-const String langueSuffix = "langue";
-const String DEFAULT_AVATAR = "icon_person_man.svg";
 
 const APP_BAR_LARGE = 80.0;
 const APP_BAR_MINI = 50.0;
@@ -49,66 +23,16 @@ const Color lightBlueBackground = Color(0xFFEAEFFF);
 const Color backgroundColors = Color.fromRGBO(219, 227, 230, 1);
 const MESSAGE_LOADING = "Chargement en cours";
 const MESSAGE_EMPTY = "Aucune donnée";
-const DEFAUT_IMAGE_ARTICLE =
-    "https://i.pinimg.com/736x/49/66/46/496646855d43a7584f7cbebf36529d69.jpg";
-
-const dynamic usersType = {
-  "ADMIN": "Administration",
-  "STAFF": "Personnel",
-};
 
 const PRIMARY_FONT = "Poppins";
-// const PRIMARY_FONT = "ChakraPetch";
 const SECONDARY_FONT = "Lato";
-
 const USED_FONT = PRIMARY_FONT;
 
-TextStyle textStyleInput =
-    const TextStyle(color: Color(0xFF626262), fontSize: 17);
+const defaultLetterSpacing = 0.03;
 
-//0xFFEA097F #EA097F
-Map<int, Color> color3 = {
-  50: const Color.fromRGBO(219, 227, 230, .1),
-  100: const Color.fromRGBO(219, 227, 230, .2),
-  200: const Color.fromRGBO(219, 227, 230, .3),
-  300: const Color.fromRGBO(219, 227, 230, .4),
-  400: const Color.fromRGBO(219, 227, 230, .5),
-  500: const Color.fromRGBO(219, 227, 230, .6),
-  600: const Color.fromRGBO(219, 227, 230, .7),
-  700: const Color.fromRGBO(219, 227, 230, .8),
-  800: const Color.fromRGBO(219, 227, 230, .9),
-  900: const Color.fromRGBO(219, 227, 230, 1.0),
-};
+TextStyle textStyleInput = TextStyle(color: secondaryColor, fontSize: 17);
 
-//0xFF196ADF #196ADF
-Map<int, Color> color2 = {
-  50: const Color.fromRGBO(25, 106, 223, .1),
-  100: const Color.fromRGBO(25, 106, 223, .2),
-  200: const Color.fromRGBO(25, 106, 223, .3),
-  300: const Color.fromRGBO(25, 106, 223, .4),
-  400: const Color.fromRGBO(25, 106, 223, .5),
-  500: const Color.fromRGBO(25, 106, 223, .6),
-  600: const Color.fromRGBO(25, 106, 223, .7),
-  700: const Color.fromRGBO(25, 106, 223, .8),
-  800: const Color.fromRGBO(25, 106, 223, .9),
-  900: const Color.fromRGBO(25, 106, 223, 1.0),
-};
-
-//0xFFFE38200 #E38200
-Map<int, Color> color1 = {
-  50: const Color.fromRGBO(227, 130, 0, .1),
-  100: const Color.fromRGBO(227, 130, 0, .2),
-  200: const Color.fromRGBO(227, 130, 0, .3),
-  300: const Color.fromRGBO(227, 130, 0, .4),
-  400: const Color.fromRGBO(227, 130, 0, .5),
-  500: const Color.fromRGBO(227, 130, 0, .6),
-  600: const Color.fromRGBO(227, 130, 0, .7),
-  700: const Color.fromRGBO(227, 130, 0, .8),
-  800: const Color.fromRGBO(227, 130, 0, .9),
-  900: const Color.fromRGBO(227, 130, 0, 1.0),
-};
-
-// 0xFF04979F #04979F
+// 0xFF1F41BB #1F41BB
 Map<int, Color> color0 = {
   50: const Color.fromRGBO(31, 65, 187, .1),
   100: const Color.fromRGBO(31, 65, 187, .2),
@@ -122,29 +46,22 @@ Map<int, Color> color0 = {
   900: const Color.fromRGBO(31, 65, 187, 1.0),
 };
 
-Map<int, Color> swatchColor = {
-  50: const Color.fromRGBO(11, 11, 11, .1),
-  100: const Color.fromRGBO(11, 11, 11, .2),
-  200: const Color.fromRGBO(11, 11, 11, .3),
-  300: const Color.fromRGBO(11, 11, 11, .4),
-  400: const Color.fromRGBO(11, 11, 11, .5),
-  500: const Color.fromRGBO(11, 11, 11, .6),
-  600: const Color.fromRGBO(11, 11, 11, .7),
-  700: const Color.fromRGBO(11, 11, 11, .8),
-  800: const Color.fromRGBO(11, 11, 11, .9),
-  900: const Color.fromRGBO(11, 11, 11, 1.0),
+// 0xFF626262 #626262
+Map<int, Color> color1 = {
+  50: const Color.fromRGBO(98, 98, 98, .1),
+  100: const Color.fromRGBO(98, 98, 98, .2),
+  200: const Color.fromRGBO(98, 98, 98, .3),
+  300: const Color.fromRGBO(98, 98, 98, .4),
+  400: const Color.fromRGBO(98, 98, 98, .5),
+  500: const Color.fromRGBO(98, 98, 98, .6),
+  600: const Color.fromRGBO(98, 98, 98, .7),
+  700: const Color.fromRGBO(98, 98, 98, .8),
+  800: const Color.fromRGBO(98, 98, 98, .9),
+  900: const Color.fromRGBO(98, 98, 98, 1.0),
 };
-MaterialColor primaryColor = MaterialColor(0xFF1F41BB, color0);
-MaterialColor secondaryColor = MaterialColor(0xFFFE38200, color1);
-MaterialColor ternaryColor = MaterialColor(0xFFEA097F, color3);
-MaterialColor primarySwatchColor = MaterialColor(0xFFC54BA3, swatchColor);
 
-const String Box_settings = 'settings';
-const String Box_cloudfiles = 'cloudFiles';
-const String Box_category = 'categories';
-const String Box_brand = 'brands';
-const String Box_book = 'books';
-const String Box_hero = 'heroes';
+MaterialColor primaryColor = MaterialColor(0xFF1F41BB, color0);
+MaterialColor secondaryColor = MaterialColor(0xFF626262, color1);
 
 const String Box_profile = 'profile';
 const List<String> imagesExtensions = ["png", "jpeg", "gif", "jpg", "tiff"];

@@ -57,7 +57,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   Container(
                     margin: const EdgeInsets.symmetric(horizontal: 10),
                     child: TextFormField(
-                      cursorColor: Color(0xFF626262),
+                     // cursorColor: Color(0xFF626262),
                       controller: emailControler,
                       validator: (String? value) {
                         if (value != null && value.isEmpty) {

@@ -16,15 +16,6 @@ class Application extends StatefulWidget {
 }
 
 class ApplicationState extends State<Application> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  dispose() {
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
