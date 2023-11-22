@@ -1,4 +1,4 @@
-package com.example.onboarding_login_register_app_ui
+package com.example.welcome_signIn_signUp_forgotPassword
 
 import io.flutter.embedding.android.FlutterActivity
 

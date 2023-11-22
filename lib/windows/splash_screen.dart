@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:onboarding_login_register_app_ui/components/shared/background.dart';
+import 'package:welcome_signIn_signUp_forgotPassword/components/shared/background.dart';
 
 import '../core/RouterGenerator.dart';
 

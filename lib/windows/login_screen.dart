@@ -8,23 +8,21 @@ import '../../core/constants.dart';
 import '../components/item/SocialNetworkItem.dart';
 import '../components/shared/background.dart';
 
-class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  State<RegisterScreen> createState() => _RegisterScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   //Initially password is obscure
-  bool _obscureTextField_1 = true,
-      _obscureTextField_2 = true,loading = false;
+  bool _obscureText = true,loading = false;
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   final TextEditingController _emailController = TextEditingController(),
-      _passwordController = TextEditingController(),
-      _passwordControllerConfirm = TextEditingController();
+      _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +42,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      "Create Account",
+                      "Login here",
                       style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           color: primaryColor,
                           fontSize: 30,
@@ -53,12 +51,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE * 2.5),
                     Text(
-                      "Create an account so you can explore"
-                      "all the existing jobs",
+                      "Welcome back you’ve \n been missed!",
                       style: Theme.of(context).textTheme.labelMedium!.copyWith(
                           color: Colors.black,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -68,11 +65,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       child: Column(
                         children: [
                           Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 10)
-                                .copyWith(top: 10,bottom: 10),
+                            margin: const EdgeInsets.only(top: 10),
                             child: TextFormField(
                               controller: _emailController,
-                            //  cursorColor: Color(0xFF626262),
                               style: textStyleInput,
                               validator: (String? value) {
                                 if (value != null && value.isEmpty) {
@@ -95,8 +90,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                           ),
                           Container(
-                            margin: const EdgeInsets.symmetric(
-                                horizontal: 10, vertical: 15),
+                              margin: const EdgeInsets.symmetric(vertical: 23),
                             child: TextFormField(
                               validator: (String? value) {
                                 if (value != null && value.isEmpty) {
@@ -104,10 +98,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 }
                                 return null;
                               },
-                             // cursorColor: Color(0xFF626262),
                               style: textStyleInput,
                               controller: _passwordController,
-                              obscureText: _obscureTextField_1,
+                              obscureText: _obscureText,
                               decoration: InputDecoration(
                                 prefixIcon: const Icon(
                                   CupertinoIcons.lock,
@@ -116,12 +109,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 suffixIcon: GestureDetector(
                                   onTap: () {
                                     setState(() {
-                                      _obscureTextField_1 =
-                                          !_obscureTextField_1;
+                                      _obscureText = !_obscureText;
                                     });
                                   },
                                   child: Icon(
-                                    _obscureTextField_1
+                                    _obscureText
                                         ? Icons.visibility_off
                                         : Icons.visibility,
                                   ),
@@ -130,72 +122,52 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               keyboardType: TextInputType.text,
                             ),
                           ),
-                          Container(
-                            margin: const EdgeInsets.symmetric(
-                                horizontal: 10, vertical: 15),
-                            child: TextFormField(
-                              validator: (String? value) {
-                                if (value != null && value.isEmpty) {
-                                  return "This field is required";
-                                }
-                                if (_passwordControllerConfirm !=
-                                    _passwordController) {
-                                  return "Different password";
-                                }
-                                return null;
-                              },
-                             // cursorColor: Color(0xFF626262),
-                              style: textStyleInput,
-                              controller: _passwordControllerConfirm,
-                              obscureText: _obscureTextField_2,
-                              decoration: InputDecoration(
-                                prefixIcon: const Icon(
-                                  CupertinoIcons.lock,
-                                ),
-                                hintText: "Confirm Password",
-                                suffixIcon: GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      _obscureTextField_2 =
-                                          !_obscureTextField_2;
-                                    });
-                                  },
-                                  child: Icon(
-                                    _obscureTextField_2
-                                        ? Icons.visibility_off
-                                        : Icons.visibility,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  Navigator.pushNamed(context,
+                                      RouterGenerator.forgotPasswordRoute);
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.all(5),
+                                  child: Text(
+                                    "Forgot your password?",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w600,
+                                        color: primaryColor
+                                    ),
                                   ),
                                 ),
                               ),
-                              keyboardType: TextInputType.text,
-                            ),
+                            ],
                           ),
                         ],
                       ),
                     ),
-                    const SizedBox(height: BUTTON_SEPARATION_SPACE * 1.8),
+                    const SizedBox(height: BUTTON_SEPARATION_SPACE * 2.8),
                     AppButton(
                       callback: () {
-                        if (formKey.currentState!.validate()) {
-                          print(_emailController.text);
-                        }
+                        if (formKey.currentState!.validate()) {}
                       },
-                      loading: loading,
-                      label: "Sign up",
+                      label: "Sign in",
                       buttonType: ButtonType.PRIMARY,
                       width: size.width,
                       horizontalPadding: 10,
                     ),
-                    const SizedBox(height: BUTTON_SEPARATION_SPACE),
+                    const SizedBox(height: BUTTON_SEPARATION_SPACE * 4),
                     InkWell(
                       onTap: () {
                         Navigator.pushNamed(
-                            context, RouterGenerator.loginRoute);
+                            context, RouterGenerator.registerRoute);
                       },
                       child: const Padding(
-                        padding: EdgeInsets.all(5),
+                        padding: EdgeInsets.all(0),
                         child: Text(
-                          "Already have an account",
+                          "Create new account",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: Color(0xFF494949),
@@ -205,7 +177,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: BUTTON_SEPARATION_SPACE * 5),
+                    const SizedBox(height: BUTTON_SEPARATION_SPACE * 7),
                     Container(
                         margin: const EdgeInsets.symmetric(horizontal: 10),
                         child: Text("Or continue with",

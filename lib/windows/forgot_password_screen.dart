@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:onboarding_login_register_app_ui/components/shared/background.dart';
+import 'package:welcome_signIn_signUp_forgotPassword/components/shared/background.dart';
 
 import '../../components/shared/AppButton.dart';
 import '../../core/Utilis.dart';
@@ -24,7 +24,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     return Background(
         child: SizedBox(
       width: size.width,
-      height: size.height * .96,
+      height: size.height,
       child: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -36,8 +36,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   color: primaryColor,
                   fontSize: 30,
-                  fontWeight: FontWeight.w700
-              ),
+                  fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: BUTTON_SEPARATION_SPACE * 2.5),
             Text(
@@ -45,8 +44,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               style: Theme.of(context).textTheme.labelMedium!.copyWith(
                   color: Colors.black,
                   fontSize: 14,
-                  fontWeight: FontWeight.w600
-              ),
+                  fontWeight: FontWeight.w600),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: BUTTON_SEPARATION_SPACE * 6),
@@ -55,9 +53,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               child: Column(
                 children: [
                   Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 10),
                     child: TextFormField(
-                     // cursorColor: Color(0xFF626262),
                       controller: emailControler,
                       validator: (String? value) {
                         if (value != null && value.isEmpty) {
@@ -81,7 +77,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 ],
               ),
             ),
-            const SizedBox(height: BUTTON_SEPARATION_SPACE * 4),
+            const SizedBox(height: BUTTON_SEPARATION_SPACE * 5),
             AppButton(
               callback: () {
                 if (formKey.currentState!.validate()) {}
@@ -89,15 +85,15 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               label: "Receive my code",
               buttonType: ButtonType.PRIMARY,
               width: size.width,
-              horizontalPadding: 10,
+              horizontalPadding: 0,
             ),
-            const SizedBox(height: BUTTON_SEPARATION_SPACE),
+            const SizedBox(height: BUTTON_SEPARATION_SPACE * 4),
             InkWell(
               onTap: () {
                 Navigator.pushNamed(context, RouterGenerator.loginRoute);
               },
               child: const Padding(
-                padding: EdgeInsets.all(5),
+                padding: EdgeInsets.all(0),
                 child: Text(
                   "To come back",
                   textAlign: TextAlign.center,

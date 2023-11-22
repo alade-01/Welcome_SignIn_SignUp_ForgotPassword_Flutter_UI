@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onboarding_login_register_app_ui/Application.dart';
+import 'package:welcome_signIn_signUp_forgotPassword/application.dart';
 
 
 void main() {

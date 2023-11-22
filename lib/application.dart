@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:onboarding_login_register_app_ui/core/RouterGenerator.dart';
-import 'package:onboarding_login_register_app_ui/core/state_manager/ThemeBloc.dart';
+import 'package:welcome_signIn_signUp_forgotPassword/core/RouterGenerator.dart';
+import 'package:welcome_signIn_signUp_forgotPassword/core/state_manager/ThemeBloc.dart';
 
 final RouteObserver<PageRoute> routeObserver = RouteObserver<PageRoute>();
 

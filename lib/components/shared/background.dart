@@ -14,11 +14,11 @@ class Background extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       body: SizedBox(
-        width: double.infinity,
-        height: MediaQuery.of(context).size.height,
+        width: size.width,
+        height: size.height,
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
@@ -27,7 +27,7 @@ class Background extends StatelessWidget {
               right: 0,
               child: SvgPicture.asset(
                 topImage,
-                width: 200,
+                width: 270,
               ),
             ),
             // Positioned(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:onboarding_login_register_app_ui/components/shared/background.dart';
+import 'package:welcome_signIn_signUp_forgotPassword/components/shared/background.dart';
 
-import '../components/item/OnboardingItem.dart';
+import '../components/item/WelcomeItem.dart';
 import '../components/shared/AppButton.dart';
 import '../core/RouterGenerator.dart';
 import '../core/constants.dart';
@@ -24,17 +24,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         child: Column(
           children: <Widget>[
             const Expanded(
-              flex: 9,
-              child: OnboardingItem(
+              flex: 8,
+              child: WelcomeItem(
                 title: "Discover Your \n Dream Job Here",
                 image: "res/images/imageHoneApp.svg",
                 text: "Explore all the existing job roles based on your \n interest and study major",
               ),
             ),
             Expanded(
-              flex: 3,
+              flex: 2,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 5),
                 child: Column(
                   children: <Widget>[
                     const SizedBox(height: defaultPadding * 4.5),
@@ -47,7 +47,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                   context, RouterGenerator.loginRoute),
                               label: "Login",
                               buttonType: ButtonType.PRIMARY,
-                              horizontalPadding: 10.0
+                              horizontalPadding: 12.0
                           ),
                         ),
                         Expanded(

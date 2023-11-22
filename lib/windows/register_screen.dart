@@ -8,21 +8,24 @@ import '../../core/constants.dart';
 import '../components/item/SocialNetworkItem.dart';
 import '../components/shared/background.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   //Initially password is obscure
-  bool _obscureText = true,loading = false;
+  bool _obscureTextFieldOne = true,
+      _obscureTextFieldTwo = true,
+      loading = false;
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   final TextEditingController _emailController = TextEditingController(),
-      _passwordController = TextEditingController();
+      _passwordController = TextEditingController(),
+      _passwordControllerConfirm = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -41,33 +44,35 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    Padding(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: Text(
+                          "Create Account",
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleLarge!
+                              .copyWith(
+                                  color: primaryColor,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.w700),
+                        )),
+                    const SizedBox(height: BUTTON_SEPARATION_SPACE * 2),
                     Text(
-                      "Login here",
-                      style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          color: primaryColor,
-                          fontSize: 30,
-                          fontWeight: FontWeight.w700
-                      ),
-                    ),
-                    const SizedBox(height: BUTTON_SEPARATION_SPACE * 2.5),
-                    Text(
-                      "Welcome back you’ve "
-                      "been missed!",
+                      "Create an account so you can explore "
+                      "all the existing jobs",
                       style: Theme.of(context).textTheme.labelMedium!.copyWith(
                           color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600
-                      ),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500),
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: BUTTON_SEPARATION_SPACE * 4.5),
+                    const SizedBox(height: BUTTON_SEPARATION_SPACE * 4),
                     Form(
                       key: formKey,
                       child: Column(
                         children: [
                           Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 10)
-                                .copyWith(top: 10,bottom: 10),
+                            margin: const EdgeInsets.only(top: 5),
                             child: TextFormField(
                               controller: _emailController,
                               style: textStyleInput,
@@ -92,8 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                           Container(
-                            margin: const EdgeInsets.symmetric(
-                                horizontal: 10, vertical: 15),
+                            margin: const EdgeInsets.symmetric(vertical: 23),
                             child: TextFormField(
                               validator: (String? value) {
                                 if (value != null && value.isEmpty) {
@@ -103,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               },
                               style: textStyleInput,
                               controller: _passwordController,
-                              obscureText: _obscureText,
+                              obscureText: _obscureTextFieldOne,
                               decoration: InputDecoration(
                                 prefixIcon: const Icon(
                                   CupertinoIcons.lock,
@@ -112,11 +116,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 suffixIcon: GestureDetector(
                                   onTap: () {
                                     setState(() {
-                                      _obscureText = !_obscureText;
+                                      _obscureTextFieldOne =
+                                          !_obscureTextFieldOne;
                                     });
                                   },
                                   child: Icon(
-                                    _obscureText
+                                    _obscureTextFieldOne
                                         ? Icons.visibility_off
                                         : Icons.visibility,
                                   ),
@@ -125,65 +130,75 @@ class _LoginScreenState extends State<LoginScreen> {
                               keyboardType: TextInputType.text,
                             ),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              InkWell(
-                                onTap: () {
-                                  Navigator.pushNamed(context,
-                                      RouterGenerator.forgotPasswordRoute);
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.all(5),
-                                  child: Text(
-                                    "Forgot your password?",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w600,
-                                        color: primaryColor
-                                    ),
+                          Container(
+                            child: TextFormField(
+                              validator: (String? value) {
+                                if (value != null && value.isEmpty) {
+                                  return "This field is required";
+                                }
+                                if (_passwordControllerConfirm !=
+                                    _passwordController) {
+                                  return "Different password";
+                                }
+                                return null;
+                              },
+                              style: textStyleInput,
+                              controller: _passwordControllerConfirm,
+                              obscureText: _obscureTextFieldTwo,
+                              decoration: InputDecoration(
+                                prefixIcon: const Icon(
+                                  CupertinoIcons.lock,
+                                ),
+                                hintText: "Confirm Password",
+                                suffixIcon: GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      _obscureTextFieldTwo =
+                                          !_obscureTextFieldTwo;
+                                    });
+                                  },
+                                  child: Icon(
+                                    _obscureTextFieldTwo
+                                        ? Icons.visibility_off
+                                        : Icons.visibility,
                                   ),
                                 ),
                               ),
-                            ],
+                              keyboardType: TextInputType.text,
+                            ),
                           ),
                         ],
                       ),
                     ),
-                    const SizedBox(height: BUTTON_SEPARATION_SPACE * 1.8),
+                    const SizedBox(height: BUTTON_SEPARATION_SPACE * 4.8),
                     AppButton(
                       callback: () {
-                        if (formKey.currentState!.validate()) {
-                          print(_emailController.text);
-                        }
+                        if (formKey.currentState!.validate()) {}
                       },
-                      loading: loading,
-                      label: "Sign in",
+                      label: "Sign up",
                       buttonType: ButtonType.PRIMARY,
                       width: size.width,
-                      horizontalPadding: 10,
+                      horizontalPadding: 0,
                     ),
-                    const SizedBox(height: BUTTON_SEPARATION_SPACE),
+                    const SizedBox(height: BUTTON_SEPARATION_SPACE * 3.5),
                     InkWell(
                       onTap: () {
                         Navigator.pushNamed(
-                            context, RouterGenerator.registerRoute);
+                            context, RouterGenerator.loginRoute);
                       },
                       child: const Padding(
-                        padding: EdgeInsets.all(5),
+                        padding: EdgeInsets.all(0),
                         child: Text(
-                          "Create new account",
+                          "Already have an account",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: Color(0xFF494949),
                               fontWeight: FontWeight.w600,
-                              fontSize: 14
-                          ),
+                              fontSize: 14),
                         ),
                       ),
                     ),
-                    const SizedBox(height: BUTTON_SEPARATION_SPACE * 5),
+                    const SizedBox(height: BUTTON_SEPARATION_SPACE * 6.5),
                     Container(
                         margin: const EdgeInsets.symmetric(horizontal: 10),
                         child: Text("Or continue with",
@@ -191,7 +206,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 fontWeight: FontWeight.w600,
                                 fontSize: 14,
                                 color: primaryColor))),
-                    const SizedBox(height: BUTTON_SEPARATION_SPACE),
+                    const SizedBox(height: BUTTON_SEPARATION_SPACE * 2),
                     const SocialNetworkItem(),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE),
                   ],

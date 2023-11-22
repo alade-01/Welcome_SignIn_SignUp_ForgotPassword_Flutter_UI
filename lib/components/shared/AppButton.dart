@@ -33,10 +33,10 @@ class AppButton extends StatelessWidget {
     double width = this.width ?? MediaQuery.of(context).size.width * .7;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding)
-          .copyWith(bottom: 5),
-      margin: const EdgeInsets.symmetric(horizontal: 10),
+          .copyWith(bottom: 0),
+      margin: const EdgeInsets.symmetric(horizontal: 0),
       width: width,
-      height: min(width / 1, 50),
+      height: min(width / 1,55),
       child: loading
           ? Center(
               child: CircularProgressIndicator(

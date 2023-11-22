@@ -71,7 +71,7 @@ class ThemeCubit extends Cubit<ThemeData> {
       prefixIconColor: secondaryColor,
       suffixIconColor: secondaryColor,
 
-      contentPadding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+      contentPadding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(5.0),
         borderSide: const BorderSide(width: 0.7, color: Colors.black38),

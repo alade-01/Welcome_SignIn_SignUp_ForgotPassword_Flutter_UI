@@ -3,10 +3,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/constants.dart';
 
-class OnboardingItem extends StatelessWidget {
+class WelcomeItem extends StatelessWidget {
   final String? title, text, image;
 
-  const OnboardingItem({
+  const WelcomeItem({
     Key? key,
     this.title,
     this.text,
@@ -15,9 +15,7 @@ class OnboardingItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery
-        .of(context)
-        .size;
+    Size size = MediaQuery.of(context).size;
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
@@ -30,11 +28,7 @@ class OnboardingItem extends StatelessWidget {
           padding: const EdgeInsets.only(top: 25, bottom: 20),
           child: Text(
             title!,
-            style: Theme
-                .of(context)
-                .textTheme
-                .titleLarge!
-                .copyWith(
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
                 color: primaryColor, fontSize: 35, fontWeight: FontWeight.w600),
             textAlign: TextAlign.center,
           ),
@@ -43,11 +37,7 @@ class OnboardingItem extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Text(
             text!,
-            style: Theme
-                .of(context)
-                .textTheme
-                .labelMedium!
-                .copyWith(
+            style: Theme.of(context).textTheme.labelMedium!.copyWith(
                 color: Colors.black, fontSize: 14, fontWeight: FontWeight.w400),
             textAlign: TextAlign.center,
           ),
