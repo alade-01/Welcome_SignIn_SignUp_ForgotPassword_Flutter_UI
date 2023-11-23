@@ -12,6 +12,7 @@ class RouterGenerator {
   static const loginRoute = "/login";
   static const registerRoute = "/register";
   static const forgotPasswordRoute = "/forgot-password";
+
   // static const indexRoute = "/index";
 
   static Route<dynamic> navigate(RouteSettings setting) {

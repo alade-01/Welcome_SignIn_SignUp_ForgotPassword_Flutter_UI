@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:welcome_signIn_signUp_forgotPassword/core/RouterGenerator.dart';
-import 'package:welcome_signIn_signUp_forgotPassword/core/state_manager/ThemeBloc.dart';
+import 'package:welcome_signIn_signUp_forgotPassword/core/router_generator.dart';
+import 'package:welcome_signIn_signUp_forgotPassword/core/state_manager/theme_bloc.dart';
 
 final RouteObserver<PageRoute> routeObserver = RouteObserver<PageRoute>();
 
@@ -13,7 +13,6 @@ class Application extends StatefulWidget {
 }
 
 class ApplicationState extends State<Application> {
-
   @override
   Widget build(BuildContext context) {
     return const ApplicationWithTheme();

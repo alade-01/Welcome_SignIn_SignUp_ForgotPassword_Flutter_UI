@@ -21,9 +21,9 @@ class WelcomeItem extends StatelessWidget {
       children: <Widget>[
         Expanded(
             child: SvgPicture.asset(
-              image!,
-              width: size.height / 0.5,
-            )),
+          image!,
+          width: size.height / 0.5,
+        )),
         Padding(
           padding: const EdgeInsets.only(top: 25, bottom: 20),
           child: Text(
@@ -37,7 +37,7 @@ class WelcomeItem extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Text(
             text!,
-            style: Theme.of(context).textTheme.labelMedium!.copyWith(
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
                 color: Colors.black, fontSize: 14, fontWeight: FontWeight.w400),
             textAlign: TextAlign.center,
           ),

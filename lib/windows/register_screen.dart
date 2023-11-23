@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../components/shared/AppButton.dart';
-import '../../core/RouterGenerator.dart';
-import '../../core/Utilis.dart';
+import '../../components/shared/app_button.dart';
+import '../../core/router_generator.dart';
+import '../../core/utilis.dart';
 import '../../core/constants.dart';
-import '../components/item/SocialNetworkItem.dart';
+import '../components/item/social_network_item.dart';
 import '../components/shared/background.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -56,11 +56,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   fontSize: 30,
                                   fontWeight: FontWeight.w700),
                         )),
-                    const SizedBox(height: BUTTON_SEPARATION_SPACE * 2),
+                    const SizedBox(height: BUTTON_SEPARATION_SPACE * 1.5),
                     Text(
                       "Create an account so you can explore "
                       "all the existing jobs",
-                      style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
                           color: Colors.black,
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
@@ -186,26 +186,34 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         Navigator.pushNamed(
                             context, RouterGenerator.loginRoute);
                       },
-                      child: const Padding(
-                        padding: EdgeInsets.all(0),
+                      child: Padding(
+                        padding: const EdgeInsets.all(0),
                         child: Text(
                           "Already have an account",
                           textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Color(0xFF494949),
-                              fontWeight: FontWeight.w600,
-                              fontSize: 14),
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelMedium!
+                              .copyWith(
+                                  fontSize: 14,
+                                  color: const Color(0xFF494949),
+                                  fontWeight: FontWeight.w600),
                         ),
                       ),
                     ),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE * 6.5),
                     Container(
                         margin: const EdgeInsets.symmetric(horizontal: 10),
-                        child: Text("Or continue with",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 14,
-                                color: primaryColor))),
+                        child: Text(
+                          "Or continue with",
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelMedium!
+                              .copyWith(
+                                  fontSize: 14,
+                                  color: primaryColor,
+                                  fontWeight: FontWeight.w600),
+                        )),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE * 2),
                     const SocialNetworkItem(),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE),

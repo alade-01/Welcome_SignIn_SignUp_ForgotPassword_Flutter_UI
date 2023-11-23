@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:welcome_signIn_signUp_forgotPassword/components/shared/background.dart';
 
-import '../components/item/WelcomeItem.dart';
-import '../components/shared/AppButton.dart';
-import '../core/RouterGenerator.dart';
+import '../components/item/welcome_item.dart';
+import '../components/shared/app_button.dart';
+import '../core/router_generator.dart';
 import '../core/constants.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -28,7 +28,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               child: WelcomeItem(
                 title: "Discover Your \n Dream Job Here",
                 image: "res/images/imageHoneApp.svg",
-                text: "Explore all the existing job roles based on your \n interest and study major",
+                text:
+                    "Explore all the existing job roles based on your \n interest and study major",
               ),
             ),
             Expanded(
@@ -47,25 +48,26 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                   context, RouterGenerator.loginRoute),
                               label: "Login",
                               buttonType: ButtonType.PRIMARY,
-                              horizontalPadding: 12.0
-                          ),
+                              horizontalPadding: 12.0),
                         ),
                         Expanded(
                           child: InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, RouterGenerator.registerRoute);
+                              Navigator.pushNamed(
+                                  context, RouterGenerator.registerRoute);
                             },
-                            child: const Padding(
-                              padding: EdgeInsets.all(0),
+                            child: Padding(
+                              padding: const EdgeInsets.all(0),
                               child: Text(
                                 "Register",
                                 textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w600,
-                                    fontFamily: PRIMARY_FONT,
-                                    color: Colors.black
-                                ),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .labelMedium!
+                                    .copyWith(
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w600),
                               ),
                             ),
                           ),

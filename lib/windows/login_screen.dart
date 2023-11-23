@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../components/shared/AppButton.dart';
-import '../../core/RouterGenerator.dart';
-import '../../core/Utilis.dart';
+import '../../components/shared/app_button.dart';
+import '../../core/router_generator.dart';
+import '../../core/utilis.dart';
 import '../../core/constants.dart';
-import '../components/item/SocialNetworkItem.dart';
+import '../components/item/social_network_item.dart';
 import '../components/shared/background.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -17,7 +17,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   //Initially password is obscure
-  bool _obscureText = true,loading = false;
+  bool _obscureText = true, loading = false;
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
@@ -46,17 +46,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           color: primaryColor,
                           fontSize: 30,
-                          fontWeight: FontWeight.w700
-                      ),
+                          fontWeight: FontWeight.w700),
                     ),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE * 2.5),
                     Text(
                       "Welcome back you’ve \n been missed!",
-                      style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
                           color: Colors.black,
                           fontSize: 20,
-                          fontWeight: FontWeight.w600
-                      ),
+                          fontWeight: FontWeight.w600),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE * 4.5),
@@ -68,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             margin: const EdgeInsets.only(top: 10),
                             child: TextFormField(
                               controller: _emailController,
-                             // style: textStyleInput,
+                              // style: textStyleInput,
                               validator: (String? value) {
                                 if (value != null && value.isEmpty) {
                                   return "This field is required";
@@ -90,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                           Container(
-                              margin: const EdgeInsets.symmetric(vertical: 23),
+                            margin: const EdgeInsets.symmetric(vertical: 23),
                             child: TextFormField(
                               validator: (String? value) {
                                 if (value != null && value.isEmpty) {
@@ -135,11 +133,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                   child: Text(
                                     "Forgot your password?",
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w600,
-                                        color: primaryColor
-                                    ),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .labelMedium!
+                                        .copyWith(
+                                            fontSize: 14,
+                                            color: primaryColor,
+                                            fontWeight: FontWeight.w600),
                                   ),
                                 ),
                               ),
@@ -164,27 +164,34 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.pushNamed(
                             context, RouterGenerator.registerRoute);
                       },
-                      child: const Padding(
-                        padding: EdgeInsets.all(0),
+                      child: Padding(
+                        padding: const EdgeInsets.all(0),
                         child: Text(
                           "Create new account",
                           textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Color(0xFF494949),
-                              fontWeight: FontWeight.w600,
-                              fontSize: 14
-                          ),
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelMedium!
+                              .copyWith(
+                                  fontSize: 14,
+                                  color: const Color(0xFF494949),
+                                  fontWeight: FontWeight.w600),
                         ),
                       ),
                     ),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE * 7),
                     Container(
                         margin: const EdgeInsets.symmetric(horizontal: 10),
-                        child: Text("Or continue with",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 14,
-                                color: primaryColor))),
+                        child: Text(
+                          "Or continue with",
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelMedium!
+                              .copyWith(
+                                  fontSize: 14,
+                                  color: primaryColor,
+                                  fontWeight: FontWeight.w600),
+                        )),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE),
                     const SocialNetworkItem(),
                     const SizedBox(height: BUTTON_SEPARATION_SPACE),

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:welcome_signIn_signUp_forgotPassword/components/shared/background.dart';
 
-import '../core/RouterGenerator.dart';
+import '../core/router_generator.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -22,9 +22,8 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
     Timer(
         const Duration(seconds: 3),
-            () => Navigator.of(context)
-                .pushReplacementNamed(RouterGenerator.introRoute)
-    );
+        () => Navigator.of(context)
+            .pushReplacementNamed(RouterGenerator.introRoute));
   }
 
   @override
@@ -71,8 +70,7 @@ class _SplashScreenState extends State<SplashScreen>
                   style: Theme.of(context).textTheme.labelMedium!.copyWith(
                       color: Colors.black,
                       fontSize: 14,
-                      fontWeight: FontWeight.w600
-                  ),
+                      fontWeight: FontWeight.w600),
                 ),
               ],
             ),

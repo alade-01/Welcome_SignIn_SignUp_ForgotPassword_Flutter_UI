@@ -79,7 +79,7 @@ class ThemeCubit extends Cubit<ThemeData> {
         width: 1,
       ),
 
-     // focusColor: secondaryColor,
+      // focusColor: secondaryColor,
       hintStyle: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w500,

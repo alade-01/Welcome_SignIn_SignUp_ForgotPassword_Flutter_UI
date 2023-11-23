@@ -36,7 +36,7 @@ class AppButton extends StatelessWidget {
           .copyWith(bottom: 0),
       margin: const EdgeInsets.symmetric(horizontal: 0),
       width: width,
-      height: min(width / 1,55),
+      height: min(width / 1, 55),
       child: loading
           ? Center(
               child: CircularProgressIndicator(

@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:welcome_signIn_signUp_forgotPassword/components/shared/background.dart';
 
-import '../../components/shared/AppButton.dart';
-import '../../core/Utilis.dart';
+import '../../components/shared/app_button.dart';
+import '../../core/utilis.dart';
 import '../../core/constants.dart';
-import '../core/RouterGenerator.dart';
+import '../core/router_generator.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({Key? key}) : super(key: key);
@@ -31,6 +31,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const SizedBox(height: BUTTON_SEPARATION_SPACE * 3),
             Text(
               "Forgot Password",
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
@@ -38,16 +39,16 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   fontSize: 30,
                   fontWeight: FontWeight.w700),
             ),
-            const SizedBox(height: BUTTON_SEPARATION_SPACE * 2.5),
+            const SizedBox(height: BUTTON_SEPARATION_SPACE * 1.7),
             Text(
-              "Enter your email to receive the code to change your password",
-              style: Theme.of(context).textTheme.labelMedium!.copyWith(
+              "Enter your email to receive the code to \n change your password",
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
                   color: Colors.black,
                   fontSize: 14,
-                  fontWeight: FontWeight.w600),
+                  fontWeight: FontWeight.w500),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: BUTTON_SEPARATION_SPACE * 6),
+            const SizedBox(height: BUTTON_SEPARATION_SPACE * 4.5),
             Form(
               key: formKey,
               child: Column(
@@ -92,16 +93,15 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               onTap: () {
                 Navigator.pushNamed(context, RouterGenerator.loginRoute);
               },
-              child: const Padding(
-                padding: EdgeInsets.all(0),
+              child: Padding(
+                padding: const EdgeInsets.all(0),
                 child: Text(
                   "To come back",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color(0xFF494949),
-                      fontWeight: FontWeight.w600,
-                      fontSize: 14
-                  ),
+                  style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                      fontSize: 14,
+                      color: const Color(0xFF494949),
+                      fontWeight: FontWeight.w600),
                 ),
               ),
             ),
