@@ -22,5 +22,8 @@ Download the Flutter GoodJod app template for free.
 
 This project is a starting point for a Flutter application.
 
-### GoodJob App Final UI
-![Preview](/flutter_auth_ui.jpg)
+### GoodJob App Final UI On IOS
+![Preview](/flutter_auth_ios_ui.jpg)
+
+### GoodJob App Final UI On Android
+![Preview](/flutter_auth_android_ui.jpg)
