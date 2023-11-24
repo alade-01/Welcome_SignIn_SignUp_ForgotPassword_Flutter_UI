@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:welcome_signIn_signUp_forgotPassword/components/shared/background.dart';
+import 'package:welcome_signIn_signUp_forgotPassword/core/constants.dart';
 
 import '../core/router_generator.dart';
 
@@ -50,13 +51,13 @@ class _SplashScreenState extends State<SplashScreen>
               ),
             ),
           ),
-          const Positioned(
+          Positioned(
             top: 180,
             bottom: 0,
             right: 0,
             left: 0,
             child: Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(color: primaryColor),
             ),
           ),
           Positioned(
