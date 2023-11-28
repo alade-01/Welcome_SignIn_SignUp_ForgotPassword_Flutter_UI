@@ -1,5 +1,5 @@
 name: welcome_signIn_signUp_forgotPassword
-description: A new Flutter project.
+description: Mobile App Splash, Welcome, Sign In, Sign Up and Forgot Password with Flutter framework.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
